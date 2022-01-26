@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: unset;
+        }
+        
+        .m-main {
+            width: 100vw;
+            height: 100vh;
+            background-color: aquamarine;
+        }
+        
+        .m-content {
+            width: 120px;
+            display: flex;
+            height: 90px;
+            position: fixed;
+            top: 25%;
+            left: calc(50% - 100px);
+            box-sizing: border-box;
+            flex-direction: column;
+            background-color: chocolate;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .m-content #color-btn {
+            width: 90px;
+            background-color: rgba(0, 0, 0, 0.959);
+            border-radius: 4px;
+            color: #fff;
+        }
+        
+        .m-content #result-color {
+            width: 110px;
+            border: unset
+        }
+    </style>
+</head>
+
+<body>
+    <div class="m-main">
+        <div class="m-content">
+            <button id="color-btn" onclick="makeNewColor()"> Get color </button>
+            <input type="text" id="result-color">
+        </div>
+    </div>
+</body>
+<script>
+    function makeNewColor() {
+        var randomColor = Math.floor(Math.random() * 16777215).toString(16);
+        document.getElementById('result-color').value = randomColor;
+        document.getElementsByClassName('m-main')[0].style.backgroundColor = '#' + randomColor;
+    }
+</script>
+
+</html>
